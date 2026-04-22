@@ -50,6 +50,8 @@ app.post('/api/quotes', (req, res) => {
 
 
 // export app for use in main.js and for testing
-module.exports = {app};
+module.exports = {
+app
+};
 
 
