@@ -5,7 +5,7 @@ submitButton.addEventListener('click', () => {
   const quote = document.getElementById('quote').value;
   const person = document.getElementById('person').value;
 
-  fetch(`http://localhost:4001/api/quotes?quote=${quote}&person=${person}`, {
+  fetch(`https://quote-api-puce.vercel.app/api/quotes?quote=${quote}&person=${person}`, {
     method: 'POST',
   })
   .then(response => response.json())
