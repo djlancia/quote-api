@@ -75,6 +75,27 @@ app.put('/api/quotes', (req, res) => {
   }
 });
 
+app.delete('/api/quotes', (req, res) => {
+  const quoteToDelete = req.query.quote;
+  if (quoteToDelete) {
+    const index = quotes.findIndex(quote => quote.quote === quoteToDelete);
+    if (index !== -1) {
+      quotes.splice(index, 1);
+      res.send({
+        message: 'Quote deleted successfully'
+      });
+    } else {
+      res.status(404).send({
+        error: 'Quote not found'
+      });
+    }
+  } else {
+    res.status(400).send({
+      error: 'Request body must contain quote'
+    });
+  }
+}); 
+
 
 
 module.exports = app;
