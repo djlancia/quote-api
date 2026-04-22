@@ -8,13 +8,13 @@ const { getRandomElement } = require('./utils');
 app.use(cors());
 app.use(express.static('public'));
 
-app.get('https://quote-api-puce.vercel.app/api/quotes/random', (req, res) => {
+app.get('/api/quotes/random', (req, res) => {
   res.send({
     quote: getRandomElement(quotes)
   });
 });
 
-app.get('https://quote-api-puce.vercel.app/api/quotes', (req, res) => {
+app.get('/api/quotes', (req, res) => {
   const person = req.query.person;
   if (person) {
     const quotesByPerson = quotes.filter(quote => quote.person.toLowerCase() === person.toLowerCase());
@@ -34,7 +34,7 @@ app.get('https://quote-api-puce.vercel.app/api/quotes', (req, res) => {
   }
 }); 
 
-app.post('https://quote-api-puce.vercel.app/api/quotes', (req, res) => {
+app.post('/api/quotes', (req, res) => {
   const newquote = req.query;
   if (newquote.quote && newquote.person) {
     quotes.push(newquote);
@@ -49,6 +49,4 @@ app.post('https://quote-api-puce.vercel.app/api/quotes', (req, res) => {
   }
 });
 
-module.exports = {
-  app
-};
+module.exports = app;
