@@ -54,4 +54,27 @@ app.post('/api/quotes', (req, res) => {
   }
 });
 
+app.put('/api/quotes', (req, res) => {
+  const updatedQuote = req.query;
+  if (updatedQuote.quote && updatedQuote.person) {
+    const index = quotes.findIndex(quote => quote.quote === updatedQuote.quote);
+    if (index !== -1) {
+      quotes[index] = updatedQuote;
+      res.send({
+        quote: updatedQuote
+      });
+    } else {
+      res.status(404).send({
+        error: 'Quote not found'
+      });
+    }
+  } else {
+    res.status(400).send({
+      error: 'Request body must contain quote and person'
+    });
+  }
+});
+
+
+
 module.exports = app;
