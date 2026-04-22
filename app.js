@@ -40,7 +40,7 @@ app.post('/api/quotes', (req, res) => {
     quotes.push(newquote);
     res.status(201).send({
       quote: newquote
-    });
+    }); 
   } else {
     res.status(400).send({
       error: 'Request body must contain quote and person'
@@ -50,8 +50,6 @@ app.post('/api/quotes', (req, res) => {
 
 
 // export app for use in main.js and for testing
-module.exports = {
-  app
-};
+module.exports = app;
 
 
