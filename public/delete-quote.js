@@ -1,4 +1,5 @@
 const deleteButton = document.getElementById('delete-quote');
+const deleteQuoteContainer = document.getElementById('delete-quote-container');
 
 deleteButton.addEventListener('click', () => {
   const quote = document.getElementById('quote').value;
@@ -15,6 +16,5 @@ deleteButton.addEventListener('click', () => {
     
     <p>Go to the <a href="index.html">home page</a> to request and view all quotes.</p>
     `
-    newQuoteContainer.appendChild(deletedQuote);
-  });
+     });
 });
