@@ -8,6 +8,11 @@ const { getRandomElement } = require('./utils');
 app.use(cors());
 app.use(express.static('public'));
 
+app.get('/', (req, res) => {
+  res.send('Welcome to the Quote API');
+});
+
+
 app.get('/api/quotes/random', (req, res) => {
   res.send({
     quote: getRandomElement(quotes)
