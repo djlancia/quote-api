@@ -45,11 +45,10 @@ app.post('https://quote-api-puce.vercel.app/api/quotes', (req, res) => {
     res.status(400).send({
       error: 'Request body must contain quote and person'
     });
+
   }
 });
 
-
-// export app for use in main.js and for testing
-module.exports = app;
-
-
+module.exports = {
+  app
+};
