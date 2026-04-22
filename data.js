@@ -51,6 +51,10 @@ const quotes = [
     quote: 'If you tell me precisely what it is a machine cannot do, then I can always make a machine which will do just that.',
     person: 'Jon von Neumann'
   },
+  {
+    quote: 'So many books, so little time.',
+    person: 'Frank Zappa'
+  },
 ];
 
 module.exports = {
