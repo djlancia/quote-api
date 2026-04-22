@@ -24,10 +24,10 @@ deleteButton.addEventListener('click', () => {
     const deletedQuote = document.createElement('div');
     deletedQuote.innerHTML = `
     <h3>Quote deleted successfully!</h3>
-    <p>${quoteData.quote} by ${quoteData.person} has been deleted</p>
+    
     <p>Go to the <a href="index.html">home page</a> to request and view all quotes.</p>
     `;
-    document.getElementById('new-quote').appendChild(deletedQuote);
+    document.getElementById('delete-quote-container').appendChild(deletedQuote);
   })
   .catch(err => console.error('Delete failed:', err));
 }); 
