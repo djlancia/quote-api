@@ -14,12 +14,11 @@ deleteButton.addEventListener('click', () => {
   })
   .then((data) => {
     // Check if 'data.quote' exists, or if 'data' itself is the quote object
-    const quoteData = data.quote || data; 
-    
-    if (!quoteData || !quoteData.quote) {
-      console.error('Unexpected API response structure:', data);
-      return;
-    }
+  if (data.message === 'Quote deleted successfully') {
+    console.log(data.message);
+  } else {
+    console.error('Unexpected response:', data);
+  }
 
     const deletedQuote = document.createElement('div');
     deletedQuote.innerHTML = `
