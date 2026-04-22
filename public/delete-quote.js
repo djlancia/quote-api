@@ -13,9 +13,9 @@ deleteButton.addEventListener('click', () => {
     const deletedQuote = document.createElement('div');
     deletedQuote.innerHTML = `
     <h3>Quote deleted successfully!</h3>
-    
+    <p>${quote.quote} by ${quote.person} has been deleted</p>
     <p>Go to the <a href="index.html">home page</a> to request and view all quotes.</p>
-    `
-    deleteQuoteContainer.appendChild(deletedQuote);
-     });
+    `;
+    document.getElementById('new-quote').appendChild(deletedQuote);
+  });
 });
